@@ -671,6 +671,16 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.content-section {
+  display: none; /* Hide all sections by default */
+}
+
+/* Show only the first section (e.g., Home) */
+#home {
+  display: block;
+}
+
+
 .hero {
   width: 100%;
   min-height: calc(100vh - 100px);
