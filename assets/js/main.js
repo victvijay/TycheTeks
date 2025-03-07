@@ -308,4 +308,32 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+    // Ensure JavaScript runs properly after delay
+    console.log("JavaScript Loaded Successfully!");
+
+    const menuLinks = document.querySelectorAll(".navmenu a");
+    menuLinks.forEach(link => {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        
+        let targetID = this.getAttribute("href").substring(1);
+        let targetSection = document.getElementById(targetID);
+        
+        // Hide all sections
+        document.querySelectorAll(".content-section").forEach(section => {
+          section.style.display = "none";
+        });
+
+        // Show clicked section
+        if (targetSection) {
+          targetSection.style.display = "block";
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+    });
+
+  }, 500); // Small delay to ensure script runs
+});
 
